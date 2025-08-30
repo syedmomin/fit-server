@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import BaseController from "./baseController";
 import termsAndConditionsService from "../services/termsAndConditions.service";
+import privacyPolicyService from "../services/privacyPolicy.service";
 import faqsService from "../services/faqs.service";
 import homeService from "../services/home.service";
 
@@ -42,6 +43,46 @@ class SetupPagesController extends BaseController {
             this.sendError(res, error);
         }
     }
+
+    createPrivacyPolicy = async (req: Request, res: Response) => {
+        try {
+            const newItem = await privacyPolicyService.Create({ ...req.body });
+            this.sendResponse(res, newItem, "Privacy Policy created successfully");
+        }
+        catch (error: any) {
+            this.sendError(res, error);
+        }
+    }
+
+    updatePrivacyPolicy = async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id;
+            if (!id) {
+                return this.sendError(res, "ID is required", 400, "Validation Error");
+            }
+            const item = await privacyPolicyService.FindById(id);
+            if (!item) {
+                return this.sendError(res, "Not found", 404, "Not Found");
+            }
+            const updatedItem = await privacyPolicyService.Update(Number(id), req.body);
+            this.sendResponse(res, updatedItem, "Updated successfully");
+        } catch (error: any) {
+            this.sendError(res, error);
+        }
+    }
+
+    getPrivacyPolicy = async (req: Request, res: Response) => {
+        try {
+            const item = await privacyPolicyService.GetAll();
+            if (!item) {
+                return this.sendError(res, "Not found", 404, "Not Found");
+            }
+            this.sendResponse(res, item, "Retrieved successfully");
+        } catch (error: any) {
+            this.sendError(res, error);
+        }
+    }
+
 
     createFaq = async (req: Request, res: Response) => {
         try {

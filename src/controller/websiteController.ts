@@ -12,6 +12,15 @@ class WebsiteController extends BaseController {
         }
     }
 
+    layout = async (req: Request, res: Response) => {
+        try {
+            const newItem = await websiteService.Layout();
+            this.sendResponse(res, newItem, "Get Layout successfully");
+        } catch (error: any) {
+            this.sendError(res, error);
+        }
+    }
+    
     blogs = async (req: Request, res: Response) => {
         try {
 

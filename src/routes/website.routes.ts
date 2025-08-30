@@ -12,6 +12,7 @@ class WebsiteRoutes {
         const { router } = this;
         // routes
         router.get("/content", websiteController.loadAllContent);
+        router.get("/layout", websiteController.layout);
         router.get("/blogs", websiteController.blogs);
         router.get("/blogs/:slug", websiteController.blogDetails);
         router.get("/plans", websiteController.plans);

@@ -3732,7 +3732,7 @@ figcaption {
     grid-column-gap: var(--_size---site--gap);
     grid-row-gap: var(--_size---site--gap);
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
     justify-content: center;
     display: grid

@@ -4,6 +4,8 @@ import ContactForm from "../entities/contactForm";
 import Faq from "../entities/faqs";
 import GeneralSettings from "../entities/general";
 import Home from "../entities/home";
+import PricePlan from "../entities/pricePlan";
+import privacyPolicy from "../entities/privacyPolicy";
 import SocialMedia from "../entities/socialMedia";
 import TermsAndConditions from "../entities/termsAndCondition";
 import User from "../entities/user";
@@ -12,19 +14,24 @@ import { BlogCategoriesArray } from "../enums/blogCategories";
 
 class WebsiteService {
     async LoadAllContent() {
-        const home = await dataSource.getRepository(Home).findOne({ where: { id: 1 } });
-        const general = await dataSource.getRepository(GeneralSettings).findOne({ where: { id: 1 } });
-        const socialMedia = await dataSource.getRepository(SocialMedia).findOne({ where: { id: 1 } });
         const latestBlog = await dataSource.getRepository(Blog).find({
             order: { createdAt: "DESC" },
             take: 4
         });
         const faqs = await dataSource.getRepository(Faq).find();
-        const privacyPolicy = await dataSource.getRepository(TermsAndConditions).findOne({ where: { id: 1 } });
+        const privacyAndPolicy = await dataSource.getRepository(privacyPolicy).findOne({ where: { id: 1 } });
+        const termsAndCondition = await dataSource.getRepository(TermsAndConditions).findOne({ where: { id: 1 } });
 
-        return { home, general, socialMedia, latestBlog, faqs, privacyPolicy };
+        return {latestBlog, faqs, privacyAndPolicy, termsAndCondition };
     }
 
+
+    async Layout() {
+        const home = await dataSource.getRepository(Home).findOne({ where: { id: 1 } });
+        const general = await dataSource.getRepository(GeneralSettings).findOne({ where: { id: 1 } });
+        const socialMedia = await dataSource.getRepository(SocialMedia).findOne({ where: { id: 1 } });
+        return { home, general, socialMedia };
+    }
 
     async getBlogs(page: number = 1, limit: number = 30, filter: string = 'All') {
         const repo = dataSource.getRepository(Blog);
@@ -89,7 +96,7 @@ class WebsiteService {
     }
 
     async Plans() {
-        return await dataSource.getRepository(GeneralSettings).findOne({ where: { id: 1 } });
+        return await dataSource.getRepository(PricePlan).find();
     }
 
     async login(email: string, password: string) {

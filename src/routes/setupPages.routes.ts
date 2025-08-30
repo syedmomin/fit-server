@@ -16,6 +16,11 @@ class SetupPagesRoutes {
         router.post("/termsAndConditions/", verifyToken, SetupPagesController.createTermsAndConditions);
         router.put("/termsAndConditions/:id", verifyToken, SetupPagesController.updateTermsAndConditions);
 
+        // privacyPolicy routes
+        router.post("/privacyPolicy/", verifyToken, SetupPagesController.createPrivacyPolicy);
+        router.put("/privacyPolicy/:id", verifyToken, SetupPagesController.updatePrivacyPolicy);
+        router.get("/privacyPolicy/", verifyToken, SetupPagesController.getPrivacyPolicy);
+
         // faqs routes
         router.get("/faqs/", verifyToken, SetupPagesController.getFaq);
         router.post("/faqs/", verifyToken, SetupPagesController.createFaq);

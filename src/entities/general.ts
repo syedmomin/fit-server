@@ -4,9 +4,6 @@ import { ISequence } from "./baseModal";
 @Entity("GeneralSettings")
 export default class GeneralSettings extends ISequence {
     @Column()
-    logo: string;
-
-    @Column()
     phone: string;
 
     @Column()
@@ -14,4 +11,7 @@ export default class GeneralSettings extends ISequence {
 
     @Column()
     address: string;
+
+    @Column()
+    shortIntro: string;
 }

@@ -12,8 +12,11 @@ export default class PricePlan extends ISequence {
     @Column("text")
     features: string;
 
-    @Column("decimal", { precision: 10, scale: 2 })
+    @Column("decimal", { precision: 10, scale: 0 })
     price: number;
+
+    @Column({ nullable: true })
+    highlighted: string;
 
     @Column({
         type: "enum",

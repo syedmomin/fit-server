@@ -2218,7 +2218,7 @@ textarea.w-select {
     --_size---radius--round: 100vw;
     --_size---radius--large: 3rem;
     --_size---radius--medium: 2rem;
-    --color--dark-tertiary: #0d5d68
+    --color--dark-tertiary: #5DE0E6
 }
 
 body {
@@ -3209,7 +3209,9 @@ figcaption {
     font-family: var(--font-family--secondary-family);
     color: var(--color--dark);
     text-transform: uppercase;
-    display: inline-flex
+    display: inline-flex;
+    position: absolute;
+    top: -1.5%;
 }
 
 .category_text {

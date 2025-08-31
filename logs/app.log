@@ -476,3 +476,16 @@
     at async SubjectExecutor.executeInsertOperations (D:\projects\fitnox\server\node_modules\src\persistence\SubjectExecutor.ts:435:42)
     at async SubjectExecutor.execute (D:\projects\fitnox\server\node_modules\src\persistence\SubjectExecutor.ts:137:9)
     at async EntityPersistExecutor.execute (D:\projects\fitnox\server\node_modules\src\persistence\EntityPersistExecutor.ts:182:21)
+[2025-08-30T11:40:22.413Z] ERROR: Error: getaddrinfo ENOTFOUND ep-billowing-meadow-ad8bmlt8-pooler.c-2.us-east-1.aws.neon.tech
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:128:17)
+[2025-08-30T15:51:49.887Z] ERROR: Error: getaddrinfo ENOTFOUND ep-billowing-meadow-ad8bmlt8-pooler.c-2.us-east-1.aws.neon.tech
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:128:17)
+[2025-08-30T17:29:21.402Z] ERROR: QueryFailedError: column PricePlan.highlighted does not exist
+    at PostgresQueryRunner.query (D:\projects\fitnox\server\node_modules\typeorm\src\driver\postgres\PostgresQueryRunner.ts:325:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async SelectQueryBuilder.loadRawResults (D:\projects\fitnox\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3808:25)
+    at async SelectQueryBuilder.executeEntitiesAndRawResults (D:\projects\fitnox\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3554:26)
+    at async SelectQueryBuilder.getRawAndEntities (D:\projects\fitnox\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1671:29)
+    at async SelectQueryBuilder.getMany (D:\projects\fitnox\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1761:25)

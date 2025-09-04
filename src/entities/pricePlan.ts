@@ -16,7 +16,16 @@ export default class PricePlan extends ISequence {
     price: number;
 
     @Column({ nullable: true })
-    highlighted: string;
+    highlightText: string;
+
+    @Column({ default: false })
+    highlighted: boolean;
+
+    @Column({ nullable: true })
+    buttonText: string;
+
+    @Column({ nullable: true })
+    discountText: string;
 
     @Column({
         type: "enum",

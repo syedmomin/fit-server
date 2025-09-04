@@ -489,3 +489,91 @@
     at async SelectQueryBuilder.executeEntitiesAndRawResults (D:\projects\fitnox\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3554:26)
     at async SelectQueryBuilder.getRawAndEntities (D:\projects\fitnox\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1671:29)
     at async SelectQueryBuilder.getMany (D:\projects\fitnox\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1761:25)
+[2025-09-01T10:19:49.137Z] ERROR: Error: Email already exists
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:115:53)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-09-01T10:20:21.248Z] ERROR: Error: You must provide selection conditions in order to find a single row.
+    at EntityManager.findOne (E:\down\project-fitnox-fitness-gym\server\node_modules\src\entity-manager\EntityManager.ts:1218:19)
+    at Repository.findOne (E:\down\project-fitnox-fitness-gym\server\node_modules\src\repository\Repository.ts:626:29)
+    at E:\down\project-fitnox-fitness-gym\server\src\services\mail.service.ts:14:33
+    at Generator.next (<anonymous>)
+    at E:\down\project-fitnox-fitness-gym\server\src\services\mail.service.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (E:\down\project-fitnox-fitness-gym\server\src\services\mail.service.ts:4:12)
+    at getSmtpConfig (E:\down\project-fitnox-fitness-gym\server\src\services\mail.service.ts:30:12)
+    at E:\down\project-fitnox-fitness-gym\server\src\services\mail.service.ts:71:24
+    at Generator.next (<anonymous>)
+[2025-09-01T10:25:35.742Z] ERROR: Error: Phone already exists
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:116:53)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-09-01T11:16:39.728Z] ERROR: ReferenceError: E:\down\project-fitnox-fitness-gym\server\src\views\email.ejs:66
+    64|         <p><%= messageBody %></p>
+    65| 
+ >> 66|         <% if (showButton) { %>
+    67|         <a href="<%= buttonLink %>" class="btn"><%= buttonText %></a>
+    68|         <% } %>
+    69|       </div>
+
+showButton is not defined
+    at eval ("E:\\down\\project-fitnox-fitness-gym\\server\\src\\views\\email.ejs":24:8)
+    at email (E:\down\project-fitnox-fitness-gym\server\node_modules\ejs\lib\ejs.js:703:17)
+    at E:\down\project-fitnox-fitness-gym\server\node_modules\ejs\lib\ejs.js:260:40
+    at new Promise (<anonymous>)
+    at tryHandleCache (E:\down\project-fitnox-fitness-gym\server\node_modules\ejs\lib\ejs.js:258:14)
+    at Object.exports.renderFile (E:\down\project-fitnox-fitness-gym\server\node_modules\ejs\lib\ejs.js:491:10)
+    at E:\down\project-fitnox-fitness-gym\server\src\services\mail.service.ts:62:22
+    at Generator.next (<anonymous>)
+    at E:\down\project-fitnox-fitness-gym\server\src\services\mail.service.ts:8:71
+    at new Promise (<anonymous>)
+[2025-09-01T11:18:20.789Z] ERROR: Error: Email already exists
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:115:53)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-09-01T11:18:24.351Z] ERROR: Error: Phone already exists
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:116:53)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-09-01T11:26:20.864Z] ERROR: Error: Phone already exists
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:116:53)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:5:58)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-09-03T12:30:59.880Z] ERROR: TypeORMError: Driver not Connected
+    at PostgresDriver.obtainMasterConnection (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresDriver.ts:1158:19)
+    at PostgresQueryRunner.connect (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresQueryRunner.ts:111:18)
+    at PostgresQueryRunner.query (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresQueryRunner.ts:245:47)
+    at SelectQueryBuilder.loadRawResults (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3808:43)
+    at SelectQueryBuilder.executeEntitiesAndRawResults (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3554:37)
+    at SelectQueryBuilder.getRawAndEntities (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1671:40)
+    at SelectQueryBuilder.getOne (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1698:36)
+    at EntityManager.findOne (E:\down\project-fitnox-fitness-gym\server\node_modules\src\entity-manager\EntityManager.ts:1229:14)
+    at Repository.findOne (E:\down\project-fitnox-fitness-gym\server\node_modules\src\repository\Repository.ts:626:29)
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:31:59)
+[2025-09-03T12:31:00.042Z] ERROR: TypeORMError: Driver not Connected
+    at PostgresDriver.obtainMasterConnection (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresDriver.ts:1158:19)
+    at PostgresQueryRunner.connect (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresQueryRunner.ts:111:18)
+    at PostgresQueryRunner.query (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresQueryRunner.ts:245:47)
+    at SelectQueryBuilder.loadRawResults (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3808:43)
+    at SelectQueryBuilder.executeEntitiesAndRawResults (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3554:37)
+    at SelectQueryBuilder.getRawAndEntities (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1671:40)
+    at SelectQueryBuilder.getMany (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1761:36)
+    at EntityManager.find (E:\down\project-fitnox-fitness-gym\server\node_modules\src\entity-manager\EntityManager.ts:1119:14)
+    at Repository.find (E:\down\project-fitnox-fitness-gym\server\node_modules\src\repository\Repository.ts:573:29)
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:18:65)
+[2025-09-03T12:31:00.065Z] ERROR: TypeORMError: Driver not Connected
+    at PostgresDriver.obtainMasterConnection (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresDriver.ts:1158:19)
+    at PostgresQueryRunner.connect (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresQueryRunner.ts:111:18)
+    at PostgresQueryRunner.query (E:\down\project-fitnox-fitness-gym\server\node_modules\typeorm\src\driver\postgres\PostgresQueryRunner.ts:245:47)
+    at SelectQueryBuilder.loadRawResults (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3808:43)
+    at SelectQueryBuilder.executeEntitiesAndRawResults (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:3554:37)
+    at SelectQueryBuilder.getRawAndEntities (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1671:40)
+    at SelectQueryBuilder.getMany (E:\down\project-fitnox-fitness-gym\server\node_modules\src\query-builder\SelectQueryBuilder.ts:1761:36)
+    at EntityManager.find (E:\down\project-fitnox-fitness-gym\server\node_modules\src\entity-manager\EntityManager.ts:1119:14)
+    at Repository.find (E:\down\project-fitnox-fitness-gym\server\node_modules\src\repository\Repository.ts:573:29)
+    at WebsiteService.<anonymous> (E:\down\project-fitnox-fitness-gym\server\src\services\website.service.ts:100:58)

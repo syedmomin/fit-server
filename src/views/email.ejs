@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= subject %></title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #071118;
+      margin: 0;
+      padding: 0;
+    }
+    
+   .email-wrapper {
+      max-width: 600px;
+      margin: 40px auto;
+      background: linear-gradient(135deg, #0c161d 0%, #071118 100%);
+      border-radius: 12px;
+      border: 1px solid #7fffd1;
+      box-shadow: 0 10px 25px rgba(127, 255, 209, 0.1);
+      overflow: hidden;
+    }
+
+    .email-header {
+      background-color: #0c161df2;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .email-body {
+      padding: 30px 20px;
+      color: #ffffff;
+    }
+    .email-footer {
+      background-color: #0c161df2;
+      text-align: center;
+      padding: 15px;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+    .btn {
+      display: inline-block;
+      border: 1px solid #7fffd1;
+      border-radius: .75rem;
+      background-color: #00ffc21a;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      color: #7fffd1;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #7fffd122;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-header">
+      <h1><%= headerTitle %></h1>
+    </div>
+    <div class="email-body">
+      <p>Hi <%= userName %>,</p>
+
+      <%- messageBody %> <!-- this allows HTML content -->
+
+      <% if (showButton) { %>
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="<%= buttonLink %>" class="btn"><%= buttonText %></a>
+        </div>
+      <% } %>
+    </div>
+    <div class="email-footer">
+      <p>&copy; <%= year %> <%= appName %>. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

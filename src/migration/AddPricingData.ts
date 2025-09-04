@@ -1,40 +1,59 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class AddInitialPricePlans1699999999999 implements MigrationInterface {
-    public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`
-    INSERT INTO "PricePlans" ("name", "description", "features", "price", "type") VALUES
-    (
-        'QuickStart Guide',
-        'Desk-bound professionals who don''t know where to start and need a clear, manageable first step into fitness',
-        'Al assessment + expert coach refinement, Designed for desk-bound professionals, 24-hour plan delivery, 4-week "where to start" program, 15-30 minute desk-friendly workouts, Posture correction exercises, Energy optimization guide, Simple habit-building framework',
-        null,
-        39.00,
-        '10'
-    ),
+export class AddPricePlans1699999999999 implements MigrationInterface {
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
+    INSERT INTO "PricePlans" ("name", "description", "features", "highlightText", "price", "type", "highlighted", "buttonText", "discountText") VALUES
     (
         'Reset Program',
         'Busy professionals who need accountability, flexibility, and real-time adjustments to stay on track',
         'Everything in QuickStart Guide, Weekly 20–30 min coach calls, Real-time program adjustments, Personalized accountability system, Stress & recovery optimization, Monthly progress assessments, Text check-ins between sessions, Habit formation coaching',
         'MOST POPULAR',
-        299.00,
-        '10'
+         299,
+        '10',
+        true,
+        'Get Started',
+        ''
     ),
     (
         '1:1 Elite Coaching',
         'For executives requiring comprehensive support. Join the waitlist to be notified when spots open.',
         'Everything in Reset Program, Daily coach availability (Premium), Weekly 45-min strategy sessions, Custom nutrition planning, Form video analysis, Priority response time (2 hours), Quarterly health assessments, Event/goal specific preparation, Lifestyle integration coaching',
         'WAITLIST ONLY',
-        549.00,
-        '10'
-    );
-`);
+         549,
+        '10',
+         false,
+        'Join Waitlist',
+        ''
+    ),
+    (
+        'Reset Program',
+        'Busy professionals who need accountability, flexibility, and real-time adjustments to stay on track',
+        'Everything in QuickStart Guide, Weekly 20–30 min coach calls, Real-time program adjustments, Personalized accountability system, Stress & recovery optimization, Monthly progress assessments, Text check-ins between sessions, Habit formation coaching',
+        'MOST POPULAR',
+         2870.40,
+        '20',
+        true,
+        'Get Started',
+        'Save 20% with annual billing'
+    ),
+    (
+        '1:1 Elite Coaching',
+        'For executives requiring comprehensive support. Join the waitlist to be notified when spots open.',
+        'Everything in Reset Program, Daily coach availability (Premium), Weekly 45-min strategy sessions, Custom nutrition planning, Form video analysis, Priority response time (2 hours), Quarterly health assessments, Event/goal specific preparation, Lifestyle integration coaching',
+        'WAITLIST ONLY',
+         5270.40,
+        '20',
+         false,
+        'Join Waitlist',
+        'Save 20% with annual billing'
+    );`
+  );
+  }
 
-    }
-
-    public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
             DELETE FROM "PricePlans" WHERE "id" IN (1, 2, 3);
         `);
-    }
+  }
 }

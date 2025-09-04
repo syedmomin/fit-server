@@ -10,6 +10,7 @@ import SocialMedia from "../entities/socialMedia";
 import TermsAndConditions from "../entities/termsAndCondition";
 import User from "../entities/user";
 import { BlogCategoriesArray } from "../enums/blogCategories";
+import { welcomeUser } from "./mail.service";
 
 
 class WebsiteService {
@@ -115,7 +116,12 @@ class WebsiteService {
             if (existingUser.phone === phone) throw new Error("Phone already exists");
         }
         const newUser = dataSource.getRepository(User).create({ name, email, phone, password });
-        return await dataSource.getRepository(User).save(newUser);
+        const savedUser = await dataSource.getRepository(User).save(newUser);
+
+        // Send welcome email after signup (no SMTP config needed)
+        await welcomeUser(email, name);
+
+        return savedUser;
     }
 
     async forgotPassword(email: string) {

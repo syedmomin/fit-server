@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "set NODE_ENV=development && nodemon src/app.ts",
-    "start:prod": "set NODE_ENV=production && nodemon src/app.ts",
+    "start": "set NODE_ENV=development&& nodemon src/app.ts",
+    "start:prod": "set NODE_ENV=production&& nodemon src/app.js",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "migrate": "ts-node src/scripts/run-migrations.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

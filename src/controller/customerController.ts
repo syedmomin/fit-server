@@ -104,7 +104,7 @@ class collection {
 
   getAll = async (req: Request, res: Response) => {
     try {
-      const customers = await ContactService.GetAll(['city']);
+      const customers = await ContactService.GetAll();
 
       if (customers.length > 0) {
         res.status(200).send({
